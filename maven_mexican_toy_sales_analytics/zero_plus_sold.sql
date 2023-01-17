@@ -15,7 +15,7 @@ INNER JOIN
 `cte` 
 ON z.`Product_ID` = `cte`.`Product_ID` 
 GROUP BY `Store_Name`, `Store_Location`, `Product_Name`, `Stock_On_Hand`, `units_sold_in_mexico` 
-ORDER BY `Store_location` ASC, `Product_Name` ASC)
+ORDER BY `Store_location` ASC, `Product_Name` ASC 
 
 -- Counts all stores from each location that had lost sales and puts them in the same row 
  SELECT (SELECT COUNT(*) FROM `cte_2` WHERE `Store_Location` = 'Airport') AS `no_Airport`,
