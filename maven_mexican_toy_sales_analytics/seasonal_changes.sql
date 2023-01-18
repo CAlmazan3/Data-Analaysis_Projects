@@ -13,7 +13,7 @@ FROM toy_sales.sales
 
 -- gets the prices of the products, products name, and category
  `cte_1` AS (
-SELECT pr.`Product_Name`, pr.`Product_Category`, pr.`Product_Cost`, pr.`Product_Price`,COUNT(sa.`Units`) AS `total_units`, 
+SELECT pr.`Product_Name`, pr.`Product_Category`, pr.`Product_Cost`, pr.`Product_Price`, SUM(sa.`Units`) AS `total_units`, 
 sa.`seasons` 
 FROM `cte` AS `sa` 
 INNER JOIN 
