@@ -1,5 +1,5 @@
 WITH `cte` AS (
-SELECT pr.`Product_ID`, pr.`Product_Name`, COUNT(sa.`Units`) AS `units_sold_in_Mexico`
+SELECT pr.`Product_ID`, pr.`Product_Name`, SUM(sa.`Units`) AS `units_sold_in_Mexico`
 FROM toy_sales.sales `sa`
 INNER JOIN 
 toy_sales.products `pr` 
