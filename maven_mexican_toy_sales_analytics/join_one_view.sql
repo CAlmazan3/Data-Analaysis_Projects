@@ -3,7 +3,7 @@ CREATE VIEW toy_sales.`join_one` AS
 -- joins tables products, stores, and sales and put them together as one whole table 
 
 WITH cte AS ( 
-SELECT pr.`Product_Name`, pr.`Product_Category`, pr.`Product_Cost`, pr.`Product_Price`,COUNT(sa.`Units`) AS total_units,
+SELECT pr.`Product_Name`, pr.`Product_Category`, pr.`Product_Cost`, pr.`Product_Price`, SUM(sa.`Units`) AS total_units,
  st.`Store_Name`, st.`Store_Location`
 FROM toy_sales.sales AS sa 
 INNER JOIN 
