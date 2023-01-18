@@ -7,3 +7,6 @@ This repository will be used to hold all of the projects that I'm working on tha
 
 ### Airplane Passenger Satisfaction analysis  
 - An analysis that analyzed Airplane passenger satisfaction through various different conditions, such as In-Flight service, flight distance, and etc. The dataset     was created by Maven Analytics. I used Microsoft Excel for this analysis. 
+
+### Mexican Toy Sales analysis 
+- An analysis based on toy sales and profits in Mexico. I find seasonal trends, top toy products, and the value of the stores inventory. I also recommend how to reach peak profit due to certain relationships that caused high profits in the data. 
