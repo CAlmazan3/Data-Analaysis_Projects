@@ -17,10 +17,11 @@ ORDER BY `Store_Name` ASC, `Product_Name` ASC)
 ROUND((`Product_Cost`) * (`Stock_On_Hand`),2) AS `Inventory_value` 
 FROM `cte`), 
 -- formula days in inventory = (avg inventory/ cost of goods sold) * period length 
--- since theres no data on the average of how much a 
+-- since theres no data on the average of how much inventory lasts, I just took what's already in stock. 
 `cte_3` AS (  SELECT `Store_Name`,`store_city`,ROUND(((`Stock_On_Hand`/`Inventory_value`) * 365),2)AS `days_in_inventory` 
 FROM `cte_2` 
 GROUP BY `Store_Name`, `Store_city`, `days_in_inventory`)   
 
+-- takes the avg of how long inventory lasts in all stores and puts it in one table
 SELECT AVG(`days_in_inventory`) AS `avg_days_in_inventory` 
 FROM `cte_3`; 
