@@ -1,6 +1,6 @@
  
  
- -- a cte that puts it in seasons 
+ -- a cte that puts it in seasons (driest, shoulder, low) 
  WITH `cte` AS ( 
 SELECT *, CASE 
 WHEN MONTH(`date`) IN (12,1,2,3,4) THEN 'DRIEST'
@@ -24,9 +24,10 @@ GROUP BY `Product_Name`, `Product_Category`, `Product_Cost`, `Product_Price`, `s
 
 -- gets the profit and displays top ten results. 
 
-SELECT *, ROUND((`total_units` * `Product_Price`) - (`total_units` * `Product_Cost`)) AS `profit` 
-FROM `cte_1` 
-ORDER BY  `profit` DESC; 
+SELECT `Seasons`, SUM(`profit`) As `total_profit` 
+FROM `cte_2` 
+GROUP BY `Seasons` 
+ORDER BY `total_profit` DESC; 
 
 
 
