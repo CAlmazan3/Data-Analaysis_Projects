@@ -22,13 +22,18 @@ ON sa.`Product_ID` = pr.`Product_ID`
 GROUP BY `Product_Name`, `Product_Category`, `Product_Cost`, `Product_Price`, `seasons`) 
   
 
--- gets the profit and displays top ten results. 
+-- gets the profit for each season and rounds them to the nearest hundreth 
+ `cte_2` AS (
+SELECT `Seasons`, ROUND((`total_units` * `Product_Price`) - (`total_units` * `Product_Cost`),2) AS `profit` 
+FROM `cte_1` 
+GROUP BY `Seasons`, `profit` 
+ORDER BY  `profit` DESC) 
 
+-- gets the total profit from each season 
 SELECT `Seasons`, SUM(`profit`) As `total_profit` 
 FROM `cte_2` 
 GROUP BY `Seasons` 
 ORDER BY `total_profit` DESC; 
-
 
 
 
