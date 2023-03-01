@@ -10,3 +10,6 @@ This repository will be used to hold all of the projects that I'm working on tha
 
 ### Mexican Toy Sales analysis 
 - An analysis based on toy sales and profits in Mexico. I find seasonal trends, top toy products, and the value of the stores inventory. I also recommend how to reach peak profit due to certain relationships that caused high profits in the data. 
+
+### LeBron James Career analysis 
+- An analysis on LeBron James and his career and how his game has evolved over the last 20 years!!! Very fun project that consists of a dashboard from Tableau and a pdf of the analysis. This was just a really fun project where I didn't really want to stress over too much, but as an NBA fan, I really enjoyed working on it and taking a break from your average analysis in business. 
